@@ -1,5 +1,9 @@
 # Distributed Rate Limiter and API Gateway
 
+![Go](https://img.shields.io/badge/Go-1.26-blue)
+![Redis](https://img.shields.io/badge/Redis-7-red)
+![CI](https://github.com/Jaiswal-Devpriya/Distributor-rate-limiter-and-API-Gateway/actions/workflows/ci.yml/badge.svg)
+
 A production-style API Gateway built in Go with a Redis-backed rate limiter. The gateway enforces per-client request quotas using shared Redis state, making rate limits consistent across gateway instances.
 
 ## Tech Stack

@@ -26,22 +26,15 @@ A production-style API Gateway built in Go with a Redis-backed rate limiter. The
 
 ## Architecture
 
-```text
-Client
-  |
-  v
-API Gateway - Go
-  |
-  v
-Rate Limit Middleware
-  |
-  v
-Redis Shared State
-  |
-  v
-Backend Route Handler
-```
+<img width="458" height="633" alt="Architecture-diagram" src="https://github.com/user-attachments/assets/d2a1312e-5ed2-4975-a418-254805114c0f" />
 
+### Request Flow
+
+1. Client sends request to API Gateway
+2. Rate limiting middleware checks request quota
+3. Redis stores and tracks per-client request counts
+4. Allowed requests are forwarded to route handlers
+5. Exceeded requests return HTTP 429
 ## API Endpoints
 
 ### Health Check

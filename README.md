@@ -35,6 +35,12 @@ A production-style API Gateway built in Go with a Redis-backed rate limiter. The
 3. Redis stores and tracks per-client request counts
 4. Allowed requests are forwarded to route handlers
 5. Exceeded requests return HTTP 429
+
+## Docker Deployment
+
+<img width="1169" height="154" alt="docker-running" src="https://github.com/user-attachments/assets/434504b8-f0ba-451c-8016-46661650c251" />
+The API Gateway and Redis services are containerized using Docker Compose.
+
 ## API Endpoints
 
 ### Health Check
@@ -94,6 +100,10 @@ for i in {1..7}; do curl -H "X-Client-ID: devpriya" http://localhost:8080/api/da
 
 Expected behavior: the first 5 requests are allowed, and later requests return `rate limit exceeded`.
 
+## Rate Limiting Demonstration
+
+<img width="967" height="498" alt="rate-limiter-working" src="https://github.com/user-attachments/assets/38ae03b0-6528-4301-987c-6975acf6f978" />
+
 ## Load Testing
 
 Run the k6 load test:
@@ -111,6 +121,11 @@ Latest test result:
 100% expected responses
 p95 latency: 8.84ms
 ```
+## Continuous Integration
+
+
+<img width="1508" height="638" alt="github-actions-success" src="https://github.com/user-attachments/assets/3db45835-cfe7-444a-bd12-a7e56142d164" />
+GitHub Actions automatically builds the project on every push.
 
 ## Project Structure
 
